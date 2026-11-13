@@ -1,0 +1,32 @@
+{
+  "backend": "learned",
+  "protocol": "reported",
+  "scaling": "identity",
+  "dimensions": [2, 3, 1],
+  "window": 4,
+  "bounds": {
+    "u_min": -1.0,
+    "u_max": 1.0,
+    "du_max": 0.1,
+    "o_min": -1.0,
+    "o_max": 1.0
+  },
+  "conditions": [
+    {"name": "WC1", "csv": "../data/nns/case1_wc_1.csv", "target": [0.4]},
+    {"name": "WC2", "csv": "../data/nns/case1_wc_2.csv", "target": [0.78]},
+    {"name": "WC3", "csv": "../data/nns/case1_wc_3.csv", "target": [1.75]}
+  ],
+  "surrogate_seed": 17,
+  "surrogate_epochs": 200,
+  "reset_index": 17,
+  "training": {
+    "episodes": 100,
+    "horizon": 200,
+    "warmup_steps": 2000,
+    "update_every": 1,
+    "switch_episode": 75,
+    "ramp_episodes": 50,
+    "ramp_origin": "training_start",
+    "alpha_start": 0.2
+  }
+}

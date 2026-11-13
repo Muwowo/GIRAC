@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "girac"
+version = "0.1.0"
+description = "Gain-Invariant Robust Actor-Critic for cross-condition process control"
+readme = "README.md"
+license = "MulanPSL-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "torch>=2.4"]
+
+[project.scripts]
+girac = "girac.__main__:main"
+
+[tool.setuptools]
+packages = ["girac"]

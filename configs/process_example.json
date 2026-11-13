@@ -1,0 +1,30 @@
+{
+  "backend": "learned",
+  "protocol": "heldout",
+  "scaling": "source_minmax",
+  "dimensions": [2, 3, 1],
+  "window": 4,
+  "bounds": {
+    "u_min": 0.0,
+    "u_max": 1.0,
+    "du_max": 0.1,
+    "o_min": 0.0,
+    "o_max": 1.0
+  },
+  "conditions": [
+    {"name": "source", "csv": "../data/local/source.csv", "target": [0.5]},
+    {"name": "target", "csv": "../data/local/target.csv", "target": [0.5]}
+  ],
+  "surrogate_seed": 17,
+  "surrogate_epochs": 150,
+  "evaluation_starts": 5,
+  "training": {
+    "episodes": 100,
+    "horizon": 200,
+    "warmup_steps": 2000,
+    "update_every": 1,
+    "switch_episode": 75,
+    "ramp_episodes": 50,
+    "ramp_origin": "training_start"
+  }
+}
